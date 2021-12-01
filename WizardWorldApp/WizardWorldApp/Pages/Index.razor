@@ -1,7 +1,10 @@
 ﻿@page "/"
 
-<h1>Hello, world!</h1>
-
-Welcome to your new app.
-
-<SurveyPrompt Title="How is Blazor working for you?"/>
+<MudContainer MaxWidth="MaxWidth.False" 
+              Style="@($"background:{Colors.Blue.Lighten4}; height:calc(100vh - var(--mud-appbar-height) + 11px)")">
+    <MudGrid>
+        <MudItem Class="d-flex pa-4 pt-7">
+            <MudText Typo="Typo.h6" Class="ml-3">Select a category and browse the data!</MudText>
+        </MudItem>
+    </MudGrid>
+</MudContainer>

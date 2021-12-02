@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="32840158-f24a-4db2-8f79-9c0e43c39d91" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Pages/Index.razor.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Components/SpellsDataTable.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Data/Spell.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WizardWorldApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WizardWorldApp/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WizardWorldApp/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WizardWorldApp/Pages/Index.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WizardWorldApp/Pages/Index.razor.css" beforeDir="false" afterPath="$PROJECT_DIR$/WizardWorldApp/Pages/Index.razor.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WizardWorldApp/Shared/MainLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WizardWorldApp/Shared/MainLayout.razor" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,9 +36,11 @@
       <option value="$PROJECT_DIR$/WizardWorldApp/wwwroot/index.html" />
       <option value="$PROJECT_DIR$/WizardWorldApp/Pages/Index.css" />
       <option value="$PROJECT_DIR$/WizardWorldApp/Shared/MainLayout.razor.css" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Data/Spell.cs" />
       <option value="$PROJECT_DIR$/WizardWorldApp/Pages/Index.razor.css" />
-      <option value="$PROJECT_DIR$/WizardWorldApp/Shared/MainLayout.razor" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Components/DataTable.razor" />
       <option value="$PROJECT_DIR$/WizardWorldApp/Pages/Index.razor" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Shared/MainLayout.razor" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="21gQcq6W1JaFTHuMbiKKQiyD2RU" />
@@ -97,13 +101,14 @@
       <option name="presentableId" value="Default" />
       <updated>1638360333587</updated>
       <workItem from="1638360347051" duration="6844000" />
+      <workItem from="1638437639756" duration="9889000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -115,6 +120,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

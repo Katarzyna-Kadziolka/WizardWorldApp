@@ -1,10 +1,31 @@
 ﻿@page "/"
+@using WizardWorldApp.Components
 
-<MudContainer MaxWidth="MaxWidth.False" 
-              Style="@($"background:{Colors.Blue.Lighten4}; height:calc(100vh - var(--mud-appbar-height) + 11px)")">
+<MudContainer MaxWidth="MaxWidth.False"
+              Style="@($"background:{Colors.Blue.Lighten4}; height:calc(100vh - var(--mud-appbar-height) + 50px)")">
     <MudGrid>
-        <MudItem Class="d-flex pa-4 pt-7">
-            <MudText Typo="Typo.h6" Class="ml-3">Select a category and browse the data!</MudText>
-        </MudItem>
+        <div class="localization">
+            <MudItem Class="pl-0 pt-7 pb-0">
+                <MudText Typo="Typo.h6" Class="ml-3">Select a category and browse the data!</MudText>
+            </MudItem>
+            <MudItem Class="pl-4">
+                <MudSelect T="string" Label="Category" AnchorOrigin="Origin.BottomCenter" 
+                           @bind-Value="@InputValue" @bind-Value:event="ValueChanged">
+                    <MudSelectItem Value="@("Houses")"/>
+                    <MudSelectItem Value="@("Magical Creatures")"/>
+                    <MudSelectItem Value="@("Spells")"/>
+                </MudSelect>
+            </MudItem>
+            <MudItem Class="pa-4">
+                @if (InputValue == "Spells") {
+                   <DataTable/> 
+                }
+            </MudItem>
+        </div>
     </MudGrid>
 </MudContainer>
+
+@code {
+    private string InputValue = "Spells";
+
+}

@@ -10,7 +10,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WizardWorldApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WizardWorldApp/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WizardWorldApp/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WizardWorldApp/Pages/Index.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WizardWorldApp/Pages/Index.razor.css" beforeDir="false" afterPath="$PROJECT_DIR$/WizardWorldApp/Pages/Index.razor.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WizardWorldApp/Shared/MainLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WizardWorldApp/Shared/MainLayout.razor" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +100,7 @@
       <option name="presentableId" value="Default" />
       <updated>1638360333587</updated>
       <workItem from="1638360347051" duration="6844000" />
-      <workItem from="1638437639756" duration="9889000" />
+      <workItem from="1638437639756" duration="9998000" />
     </task>
     <servers />
   </component>

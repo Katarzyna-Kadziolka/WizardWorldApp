@@ -10,15 +10,21 @@
             </MudItem>
             <MudItem Class="pl-4">
                 <MudSelect T="string" Label="Category" AnchorOrigin="Origin.BottomCenter" 
-                           @bind-Value="@InputValue" @bind-Value:event="ValueChanged">
+                           @bind-Value="@_inputValue" @bind-Value:event="ValueChanged">
                     <MudSelectItem Value="@("Houses")"/>
                     <MudSelectItem Value="@("Magical Creatures")"/>
                     <MudSelectItem Value="@("Spells")"/>
                 </MudSelect>
             </MudItem>
             <MudItem Class="pa-4">
-                @if (InputValue == "Spells") {
-                   <DataTable/> 
+                @if (_inputValue == "Spells") {
+                   <SpellsDataTable /> 
+                }
+                else if (_inputValue == "Houses") {
+                    <HousesDataTable />
+                }
+                else if (_inputValue == "Magical Creatures") {
+                    <MagicalCreaturesDataTable />
                 }
             </MudItem>
         </div>
@@ -26,6 +32,6 @@
 </MudContainer>
 
 @code {
-    private string InputValue = "Spells";
+    private string _inputValue = "Spells";
 
 }

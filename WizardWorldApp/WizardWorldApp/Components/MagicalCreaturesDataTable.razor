@@ -1,0 +1,104 @@
+﻿@using WizardWorldApp.Data
+@inject HttpClient httpClient
+
+<MudTable Items="@_creatures" Dense="@_dense" Hover="@_hover" Bordered="@_bordered" Striped="@_striped" 
+          Filter="new Func<MagicalCreature, bool>(FilterFunc1)" @bind-SelectedItem="_selectedItem1">
+    <ToolBarContent>
+        <MudText Typo="Typo.h6">Magical Creature</MudText>
+        <MudSpacer/>
+        <MudTextField @bind-Value="_searchString1" Placeholder="Search" Adornment="Adornment.Start" 
+                      AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+    </ToolBarContent>
+    <HeaderContent>
+        <MudTh>Name</MudTh>
+        <MudTh>Classification</MudTh>
+        <MudTh>Status</MudTh>
+        <MudTh>DangerLevel</MudTh>
+        <MudTh>Description</MudTh>
+        <MudTh>NativeTo</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="Name">@context.Name</MudTd>
+        <MudTd DataLabel="Classification">@context.Classification.ToString()</MudTd>
+        <MudTd DataLabel="Status">@context.Status.ToString()</MudTd>
+        <MudTd DataLabel="DangerLevel">@context.DangerLevel.ToString()</MudTd>
+        <MudTd DataLabel="Description">@context.Description</MudTd>
+        <MudTd DataLabel="NativeTo">@context.NativeTo</MudTd>
+    </RowTemplate>
+    <PagerContent>
+        <MudTablePager/>
+    </PagerContent>
+</MudTable>
+
+@code {
+    private bool _dense = false;
+    private bool _hover = true;
+    private bool _striped = true;
+    private bool _bordered = false;
+    private string _searchString1 = "";
+    private string _searchString2 = "";
+    private MagicalCreature _selectedItem1 = null;
+    private MagicalCreature _selectedItem2 = null;
+
+    private HashSet<MagicalCreature> _selectedItems = new HashSet<MagicalCreature>();
+
+    private IEnumerable<MagicalCreature> _creatures = new List<MagicalCreature>();
+
+    protected override async Task OnInitializedAsync() {
+    //Elements = await httpClient.GetFromJsonAsync<List<Element>>("webapi/periodictable");
+        _creatures = new List<MagicalCreature>() {
+            new MagicalCreature {
+                Id = Guid.NewGuid(),
+                Name = "Hypogryph",
+                Classification = CreatureClassificationByMinistryOfMagic.None,
+                Status = CreatureStatus.None,
+                DangerLevel = CreatureDangerLevel.None,
+                Description = "Half bird half hourse",
+                NativeTo = "Great Britain",
+                CreatureRelations = new List<CreatureRelation>()
+            },
+            new MagicalCreature {
+                Id = Guid.NewGuid(),
+                Name = "Phenix",
+                Classification = CreatureClassificationByMinistryOfMagic.None,
+                Status = CreatureStatus.None,
+                DangerLevel = CreatureDangerLevel.None,
+                Description = "Immortal bird",
+                NativeTo = "Egypt",
+                CreatureRelations = new List<CreatureRelation>()
+            },
+            new MagicalCreature {
+                Id = Guid.NewGuid(),
+                Name = "Kikimora",
+                Classification = CreatureClassificationByMinistryOfMagic.None,
+                Status = CreatureStatus.None,
+                DangerLevel = CreatureDangerLevel.None,
+                Description = "Insect",
+                NativeTo = "Redania",
+                CreatureRelations = new List<CreatureRelation>()
+            },
+        };
+    }
+
+    private bool FilterFunc1(MagicalCreature creature) => FilterFunc(creature, _searchString1);
+    private bool FilterFunc2(MagicalCreature creature) => FilterFunc(creature, _searchString2);
+
+    private bool FilterFunc(MagicalCreature creature, string searchString) {
+        if (string.IsNullOrWhiteSpace(searchString))
+            return true;
+        if (creature.Name.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (creature.Classification.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (creature.Status.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (creature.DangerLevel.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (creature.Description.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (creature.NativeTo.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        return false;
+    }
+
+}

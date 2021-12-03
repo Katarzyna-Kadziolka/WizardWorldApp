@@ -1,16 +1,15 @@
 ﻿@using WizardWorldApp.Data
 @inject HttpClient httpClient
 
-<MudTable Items="@spells" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped" 
-          Filter="new Func<Spell, bool>(FilterFunc1)" @bind-SelectedItem="selectedItem1">
+<MudTable Items="@_spells" Dense="@_dense" Hover="@_hover" Bordered="@_bordered" Striped="@_striped" 
+          Filter="new Func<Spell, bool>(FilterFunc1)" @bind-SelectedItem="_selectedItem1">
     <ToolBarContent>
         <MudText Typo="Typo.h6">Spells</MudText>
         <MudSpacer/>
-        <MudTextField @bind-Value="searchString1" Placeholder="Search" Adornment="Adornment.Start" 
+        <MudTextField @bind-Value="_searchString1" Placeholder="Search" Adornment="Adornment.Start" 
                       AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
     </ToolBarContent>
     <HeaderContent>
-        <MudTh>Id</MudTh>
         <MudTh>Name</MudTh>
         <MudTh>Incantation</MudTh>
         <MudTh>Effect</MudTh>
@@ -20,12 +19,11 @@
         <MudTh>Can be verbal</MudTh>
     </HeaderContent>
     <RowTemplate>
-        <MudTd DataLabel="Id">@context.Id</MudTd>
         <MudTd DataLabel="Name">@context.Name</MudTd>
         <MudTd DataLabel="Incantation">@context.Incantation</MudTd>
         <MudTd DataLabel="Effect">@context.Effect</MudTd>
-        <MudTd DataLabel="Type">@context.Type</MudTd>
-        <MudTd DataLabel="Light">@context.Light</MudTd>
+        <MudTd DataLabel="Type">@context.Type.ToString()</MudTd>
+        <MudTd DataLabel="Light">@context.Light.ToString()</MudTd>
         <MudTd DataLabel="Creator">@context.Creator</MudTd>
         <MudTd DataLabel="Can be verbal">@context.CanBeVerbal</MudTd>
     </RowTemplate>
@@ -35,22 +33,22 @@
 </MudTable>
 
 @code {
-    private bool dense = false;
-    private bool hover = true;
-    private bool striped = true;
-    private bool bordered = false;
-    private string searchString1 = "";
-    private string searchString2 = "";
-    private Spell selectedItem1 = null;
-    private Spell selectedItem2 = null;
+    private bool _dense = false;
+    private bool _hover = true;
+    private bool _striped = true;
+    private bool _bordered = false;
+    private string _searchString1 = "";
+    private string _searchString2 = "";
+    private Spell _selectedItem1 = null;
+    private Spell _selectedItem2 = null;
 
-    private HashSet<Spell> selectedItems = new HashSet<Spell>();
+    private HashSet<Spell> _selectedItems = new HashSet<Spell>();
 
-    private IEnumerable<Spell> spells = new List<Spell>();
+    private IEnumerable<Spell> _spells = new List<Spell>();
 
     protected override async Task OnInitializedAsync() {
     //Elements = await httpClient.GetFromJsonAsync<List<Element>>("webapi/periodictable");
-        spells = new List<Spell>() {
+        _spells = new List<Spell>() {
             new Spell {
                 Id = Guid.NewGuid(),
                 Name = "Murder Spell",
@@ -84,8 +82,8 @@
         };
     }
 
-    private bool FilterFunc1(Spell spell) => FilterFunc(spell, searchString1);
-    private bool FilterFunc2(Spell spell) => FilterFunc(spell, searchString2);
+    private bool FilterFunc1(Spell spell) => FilterFunc(spell, _searchString1);
+    private bool FilterFunc2(Spell spell) => FilterFunc(spell, _searchString2);
 
     private bool FilterFunc(Spell spell, string searchString) {
         if (string.IsNullOrWhiteSpace(searchString))

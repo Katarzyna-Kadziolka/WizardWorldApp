@@ -19,11 +19,15 @@
             </MudForm>
         </MudCardContent>
         <MudCardActions>
-            <MudButton Variant="Variant.Filled" Color="Color.Info" Class="ml-auto">Send</MudButton>
+            <MudButton Variant="Variant.Filled" @onclick="Send" Color="Color.Info" Class="ml-auto">Send</MudButton>
         </MudCardActions>
     </MudCard>
 </div>
 @code {
     private string _inputValue = FeedbackType.General.ToString();
     public string TextValue { get; set; }
+
+    private void Send() {
+        
+    }
 }

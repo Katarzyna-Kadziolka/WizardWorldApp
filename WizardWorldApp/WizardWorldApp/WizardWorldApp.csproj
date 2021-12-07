@@ -9,6 +9,7 @@
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.9" PrivateAssets="all" />
         <PackageReference Include="MudBlazor" Version="5.2.0" />
         <PackageReference Include="MudBlazor.ThemeManager" Version="1.0.5" />
+        <PackageReference Include="RestSharp" Version="106.13.0" />
         <PackageReference Include="System.Net.Http.Json" Version="5.0.0" />
     </ItemGroup>
 

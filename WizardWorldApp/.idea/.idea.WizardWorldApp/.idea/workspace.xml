@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="32840158-f24a-4db2-8f79-9c0e43c39d91" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/WizardWorldApp/WizardWorldClient.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WizardWorldApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WizardWorldApp/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WizardWorldApp/Components/FeedbackForm.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WizardWorldApp/Components/FeedbackForm.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WizardWorldApp/Pages/Feedback.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WizardWorldApp/Pages/Feedback.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WizardWorldApp/WizardWorldApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WizardWorldApp/WizardWorldApp.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +51,7 @@
       <option value="$PROJECT_DIR$/WizardWorldApp/Data/FeedbackMessage.cs" />
       <option value="$PROJECT_DIR$/WizardWorldApp/Pages/Feedback.razor" />
       <option value="$PROJECT_DIR$/WizardWorldApp/Components/FeedbackForm.razor" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/WizardWorldClient.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="21gQcq6W1JaFTHuMbiKKQiyD2RU" />
@@ -111,7 +113,8 @@
       <updated>1638360333587</updated>
       <workItem from="1638360347051" duration="6844000" />
       <workItem from="1638437639756" duration="9998000" />
-      <workItem from="1638534076534" duration="7627000" />
+      <workItem from="1638534076534" duration="7651000" />
+      <workItem from="1638897125415" duration="2216000" />
     </task>
     <servers />
   </component>

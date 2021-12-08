@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace WizardWorldApp.Data {
+namespace WizardWorldApp.Data.Houses {
     public class House {
         public Guid Id { get; set; }
         public string Name { get; set; }
@@ -13,19 +13,5 @@ namespace WizardWorldApp.Data {
         public string CommonRoom { get; set; }
         public ICollection<HouseHead> Heads { get; set; }
         public ICollection<Trait> Traits { get; set; }
-    }
-    public class HouseHead {
-        public Guid Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public Guid HouseId { get; set; }
-    }
-    public class Trait {
-        public Guid Id { get; set; }
-        public TraitName Name { get; set; }
-        public Guid HouseId { get; set; }
-    }
-    public enum TraitName {
-        None = 0
     }
 }

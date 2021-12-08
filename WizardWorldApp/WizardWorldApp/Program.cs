@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using MudBlazor.Services;
+using WizardWorldApp.Services;
 
 
 namespace WizardWorldApp {
@@ -20,6 +21,7 @@ namespace WizardWorldApp {
 
             builder.Services.AddScoped(
                 sp => new HttpClient {BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)});
+            builder.Services.AddScoped<WizardWorldClient>();
 
             await builder.Build().RunAsync();
         }

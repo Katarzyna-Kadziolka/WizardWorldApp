@@ -5,10 +5,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="32840158-f24a-4db2-8f79-9c0e43c39d91" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/WizardWorldApp/WizardWorldClient.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Components/SpellsDataTable.razor.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Data/Elixirs/Elixir.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Data/Elixirs/ElixirDifficulty.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Data/Elixirs/ElixirInventor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Data/Elixirs/ElixirQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Data/Feedback/FeedbackCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Data/Feedback/FeedbackType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Data/Houses/HouseHead.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Data/Houses/Trait.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Data/Houses/TraitName.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Data/Ingredients/Ingredient.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Data/MagicalCreatures/CreatureClassificationByMinistryOfMagic.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Data/MagicalCreatures/CreatureDangerLevel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Data/MagicalCreatures/CreatureStatus.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Data/Spells/Spell.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Data/Spells/SpellLight.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Data/Spells/SpellType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Data/Wizards/Wizard.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Data/Wizards/WizardElixir.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Extensions/HttpClientExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Extensions/HttpContentExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Services/WizardWorldClient.Elixir.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Services/WizardWorldClient.Feedback.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Services/WizardWorldClient.House.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Services/WizardWorldClient.Ingredient.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Services/WizardWorldClient.MagicalCreature.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Services/WizardWorldClient.Spell.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Services/WizardWorldClient.Wizard.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WizardWorldApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WizardWorldApp/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WizardWorldApp/Components/FeedbackForm.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WizardWorldApp/Components/FeedbackForm.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WizardWorldApp/Components/HousesDataTable.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WizardWorldApp/Components/HousesDataTable.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WizardWorldApp/Components/MagicalCreaturesDataTable.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WizardWorldApp/Components/MagicalCreaturesDataTable.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WizardWorldApp/Components/SpellsDataTable.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WizardWorldApp/Components/SpellsDataTable.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WizardWorldApp/Data/FeedbackMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WizardWorldApp/Data/Feedback/FeedbackMessage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WizardWorldApp/Data/House.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WizardWorldApp/Data/Houses/House.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WizardWorldApp/Data/MagicalCreature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WizardWorldApp/Data/MagicalCreatures/MagicalCreature.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WizardWorldApp/Data/Spell.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WizardWorldApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WizardWorldApp/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WizardWorldApp/WizardWorldApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WizardWorldApp/WizardWorldApp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WizardWorldApp/WizardWorldClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WizardWorldApp/Services/WizardWorldClient.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,31 +63,57 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/WizardWorldApp/_Imports.razor" />
-      <option value="$PROJECT_DIR$/WizardWorldApp/Shared/NavMenu.razor.css" />
-      <option value="$PROJECT_DIR$/WizardWorldApp/Program.cs" />
-      <option value="$PROJECT_DIR$/WizardWorldApp/Shared/NavMenu.razor" />
-      <option value="$PROJECT_DIR$/WizardWorldApp/wwwroot/index.html" />
-      <option value="$PROJECT_DIR$/WizardWorldApp/Pages/Index.css" />
-      <option value="$PROJECT_DIR$/WizardWorldApp/Shared/MainLayout.razor.css" />
-      <option value="$PROJECT_DIR$/WizardWorldApp/Data/Spell.cs" />
-      <option value="$PROJECT_DIR$/WizardWorldApp/Pages/Index.razor.css" />
-      <option value="$PROJECT_DIR$/WizardWorldApp/Components/DataTable.razor" />
-      <option value="$PROJECT_DIR$/WizardWorldApp/Pages/Index.razor" />
-      <option value="$PROJECT_DIR$/WizardWorldApp/Data/House.cs" />
-      <option value="$PROJECT_DIR$/WizardWorldApp/Data/MagicalCreature.cs" />
       <option value="$PROJECT_DIR$/WizardWorldApp/obj/Debug/net5.0/Razor/Components/HousesDataTable.razor.g.cs" />
       <option value="$PROJECT_DIR$/WizardWorldApp/obj/Debug/net5.0/Razor/Components/SpellsDataTable.razor.g.cs" />
       <option value="$PROJECT_DIR$/WizardWorldApp/obj/Debug/net5.0/Razor/Components/MagicalCreaturesDataTable.razor.g.cs" />
       <option value="$PROJECT_DIR$/WizardWorldApp/Components/HousesDataTable.razor" />
-      <option value="$PROJECT_DIR$/WizardWorldApp/Components/SpellsDataTable.razor" />
-      <option value="$PROJECT_DIR$/WizardWorldApp/Components/MagicalCreaturesDataTable.razor" />
       <option value="$PROJECT_DIR$/WizardWorldApp/Shared/MainLayout.razor" />
       <option value="$PROJECT_DIR$/WizardWorldApp/Data/Feedback.cs" />
       <option value="$PROJECT_DIR$/WizardWorldApp/Data/FeedbackMessage.cs" />
       <option value="$PROJECT_DIR$/WizardWorldApp/Pages/Feedback.razor" />
       <option value="$PROJECT_DIR$/WizardWorldApp/Components/FeedbackForm.razor" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Data/Spell/SpellLight.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Data/Spells/SpellLight.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Data/Spells/SpellType.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Data/Spell.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Data/House.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Data/Houses/TraitName.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Data/Houses/House.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Data/MagicalCreatures/CreatureClassificationByMinistryOfMagic.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Data/MagicalCreatures/CreatureDangerLevel.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Data/MagicalCreatures/CreatureRelation.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Data/MagicalCreatures/CreatureStatus.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Data/Houses/HouseHead.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Data/Houses/Trait.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Data/MagicalCreatures/MagicalCreature.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Data/Ingredients/Ingredient.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Data/Wizards/Wizard.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Data/Wizards/WizardElixir.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Data/Elixirs/Elixir.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Data/Elixirs/ElixirInventor.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Data/Elixirs/ElixirDifficulty.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Data/Feedback/FeedbackMessage.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Data/Feedback/FeedbackType.cs" />
       <option value="$PROJECT_DIR$/WizardWorldApp/WizardWorldClient.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Clients/WizardWorldClient.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Clients/WizardWorldClient.Spell.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Data/Spells/Spell.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Components/MagicalCreaturesDataTable.razor" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Services/WizardWorldClient.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Extensions/HttpContentExtensions.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Program.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Extensions/HttpClientExtensions.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Components/SpellsDataTable.razor.css" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Components/SpellsDataTable.razor" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Services/WizardWorldClient.Spell.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Services/WizardWorldClient.MagicalCreatures.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Services/WizardWorldClient.House.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Services/WizardWorldClient.Wizard.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Services/WizardWorldClient.Ingredient.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Data/Elixirs/ElixirQuery.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Services/WizardWorldClient.Elixir.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Data/Feedback/FeedbackCommand.cs" />
+      <option value="$PROJECT_DIR$/WizardWorldApp/Services/WizardWorldClient.Feedback.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="21gQcq6W1JaFTHuMbiKKQiyD2RU" />
@@ -114,7 +176,8 @@
       <workItem from="1638360347051" duration="6844000" />
       <workItem from="1638437639756" duration="9998000" />
       <workItem from="1638534076534" duration="7651000" />
-      <workItem from="1638897125415" duration="2216000" />
+      <workItem from="1638897125415" duration="2285000" />
+      <workItem from="1638960064206" duration="8367000" />
     </task>
     <servers />
   </component>

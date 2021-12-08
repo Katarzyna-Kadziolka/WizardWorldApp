@@ -2,20 +2,21 @@
 @using System.ComponentModel.DataAnnotations
 @using WizardWorldApp.Data
 @using WizardWorldApp.Data.Feedback
-
+@using WizardWorldApp.Services
+@inject WizardWorldClient _client
 
 <div style="width: 800px;">
     <MudCard>
         <MudCardContent>
             <MudForm>
                 <MudSelect T="string" Label="Message category" AnchorOrigin="Origin.BottomCenter"
-                           @bind-Value="@_inputValue" @bind-Value:event="ValueChanged">
+                           @bind-Value="@_feedbackType" @bind-Value:event="ValueChanged">
                     <MudSelectItem Value="@(FeedbackType.Bug.ToString())"/>
                     <MudSelectItem Value="@(FeedbackType.DataError.ToString())"/>
                     <MudSelectItem Value="@(FeedbackType.General.ToString())"/>
                     <MudSelectItem Value="@(FeedbackType.Suggestion.ToString())"/>
                 </MudSelect>
-                <MudTextField @bind-Value="TextValue" Label="Your Message" Variant="Variant.Text" Lines="10" 
+                <MudTextField @bind-Value="_feedback" Label="Your Message" Variant="Variant.Text" Lines="10" 
                               AdornmentColor="Color.Info" ></MudTextField>
             </MudForm>
         </MudCardContent>
@@ -25,10 +26,17 @@
     </MudCard>
 </div>
 @code {
-    private string _inputValue = FeedbackType.General.ToString();
-    public string TextValue { get; set; }
+    private string _feedbackType = FeedbackType.General.ToString();
+    private string _feedback { get; set; }
 
-    private void Send() {
-        
+    private async void Send() {
+        Enum.TryParse(_feedbackType, out FeedbackType feedbackType);
+        var command = new FeedbackCommand {
+            FeedbackType = feedbackType,
+            Feedback = _feedback,
+            EntityId = null
+        };
+        await _client.PostFeedbackAsync(command);
+        _feedback = "";
     }
 }

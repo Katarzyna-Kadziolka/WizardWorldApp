@@ -1,0 +1,46 @@
+﻿@using WizardWorldApp.Data.Ingredients
+@using WizardWorldApp.Services
+@inject WizardWorldClient _client
+
+<MudContainer class="table_width">
+   <MudTable Items="@_ingredients" Dense="false" Hover="true" Bordered="false" Striped="true" 
+             Filter="new Func<Ingredient, bool>(FilterFunc)" @bind-SelectedItem="_selectedItem">
+       <ToolBarContent>
+           <MudText Typo="Typo.h6">Ingredients</MudText>
+           <MudSpacer/>
+           <MudTextField @bind-Value="_searchString" Placeholder="Search" Adornment="Adornment.Start" 
+                         AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+       </ToolBarContent>
+       <HeaderContent>
+           <MudTh>Name</MudTh>
+       </HeaderContent>
+       <RowTemplate>
+           <MudTd DataLabel="Name">@context.Name</MudTd>
+       </RowTemplate>
+       <PagerContent>
+           <MudTablePager/>
+       </PagerContent>
+   </MudTable> 
+</MudContainer>
+
+
+@code {
+    private string _searchString = "";
+    private Ingredient _selectedItem = null;
+    
+    private IEnumerable<Ingredient> _ingredients = new List<Ingredient>();
+
+    protected override async Task OnInitializedAsync() {
+        // _elixirs = await _client.GetIngredientsAsync();
+    }
+
+    private bool FilterFunc(Ingredient ingredient) => FilterFunc(ingredient, _searchString);
+
+    private bool FilterFunc(Ingredient ingredient, string searchString) {
+        if (string.IsNullOrWhiteSpace(searchString))
+            return true;
+        if (ingredient.Name.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        return false;
+    }
+}

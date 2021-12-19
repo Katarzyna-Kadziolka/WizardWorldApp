@@ -1,0 +1,50 @@
+﻿@using WizardWorldApp.Data.Wizards
+@using WizardWorldApp.Services
+@inject WizardWorldClient _client
+
+<MudContainer class="table_width">
+   <MudTable Items="@_wizards" Dense="false" Hover="true" Bordered="false" Striped="true" 
+             Filter="new Func<Wizard, bool>(FilterFunc)" @bind-SelectedItem="_selectedItem">
+       <ToolBarContent>
+           <MudText Typo="Typo.h6">Wizards</MudText>
+           <MudSpacer/>
+           <MudTextField @bind-Value="_searchString" Placeholder="Search" Adornment="Adornment.Start" 
+                         AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+       </ToolBarContent>
+       <HeaderContent>
+           <MudTh>FirstName</MudTh>
+           <MudTh>LastName</MudTh>
+       </HeaderContent>
+       <RowTemplate>
+           <MudTd DataLabel="Name">@context.FirstName</MudTd>
+           <MudTd DataLabel="Incantation">@context.LastName</MudTd>
+       </RowTemplate>
+       <PagerContent>
+           <MudTablePager/>
+       </PagerContent>
+   </MudTable> 
+</MudContainer>
+
+
+@code {
+    private string _searchString = "";
+    private Wizard _selectedItem = null;
+    
+    private IEnumerable<Wizard> _wizards = new List<Wizard>();
+
+    protected override async Task OnInitializedAsync() {
+        // _elixirs = await _client.GetWizardsAsync();
+    }
+
+    private bool FilterFunc(Wizard wizard) => FilterFunc(wizard, _searchString);
+
+    private bool FilterFunc(Wizard wizard, string searchString) {
+        if (string.IsNullOrWhiteSpace(searchString))
+            return true;
+        if (wizard.FirstName.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (wizard.LastName.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        return false;
+    }
+}

@@ -1,13 +1,14 @@
 ﻿@using WizardWorldApp.Data
 @using WizardWorldApp.Data.MagicalCreatures
-@inject HttpClient httpClient
+@using WizardWorldApp.Services
+@inject WizardWorldClient _client
 
-<MudTable Items="@_creatures" Dense="@_dense" Hover="@_hover" Bordered="@_bordered" Striped="@_striped" 
-          Filter="new Func<MagicalCreature, bool>(FilterFunc1)" @bind-SelectedItem="_selectedItem1">
+<MudTable Items="@_creatures" Dense="false" Hover="true" Bordered="false" Striped="true" 
+          Filter="new Func<MagicalCreature, bool>(FilterFunc)" @bind-SelectedItem="_selectedItem">
     <ToolBarContent>
         <MudText Typo="Typo.h6">Magical Creature</MudText>
         <MudSpacer/>
-        <MudTextField @bind-Value="_searchString1" Placeholder="Search" Adornment="Adornment.Start" 
+        <MudTextField @bind-Value="_searchString" Placeholder="Search" Adornment="Adornment.Start" 
                       AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
     </ToolBarContent>
     <HeaderContent>
@@ -32,21 +33,13 @@
 </MudTable>
 
 @code {
-    private bool _dense = false;
-    private bool _hover = true;
-    private bool _striped = true;
-    private bool _bordered = false;
-    private string _searchString1 = "";
-    private string _searchString2 = "";
-    private MagicalCreature _selectedItem1 = null;
-    private MagicalCreature _selectedItem2 = null;
-
-    private HashSet<MagicalCreature> _selectedItems = new HashSet<MagicalCreature>();
+    private string _searchString = "";
+    private MagicalCreature _selectedItem = null;
 
     private IEnumerable<MagicalCreature> _creatures = new List<MagicalCreature>();
 
     protected override async Task OnInitializedAsync() {
-    //Elements = await httpClient.GetFromJsonAsync<List<Element>>("webapi/periodictable");
+        // _creatures = await _client.GetMagicalCreaturesAsync();
         _creatures = new List<MagicalCreature>() {
             new MagicalCreature {
                 Id = Guid.NewGuid(),
@@ -81,8 +74,7 @@
         };
     }
 
-    private bool FilterFunc1(MagicalCreature creature) => FilterFunc(creature, _searchString1);
-    private bool FilterFunc2(MagicalCreature creature) => FilterFunc(creature, _searchString2);
+    private bool FilterFunc(MagicalCreature creature) => FilterFunc(creature, _searchString);
 
     private bool FilterFunc(MagicalCreature creature, string searchString) {
         if (string.IsNullOrWhiteSpace(searchString))

@@ -1,0 +1,66 @@
+﻿@using WizardWorldApp.Data.Elixirs
+@using WizardWorldApp.Services
+@inject WizardWorldClient _client
+
+<MudContainer class="table_width">
+   <MudTable Items="@_elixirs" Dense="false" Hover="true" Bordered="false" Striped="true" 
+             Filter="new Func<Elixir, bool>(FilterFunc)" @bind-SelectedItem="_selectedItem">
+       <ToolBarContent>
+           <MudText Typo="Typo.h6">Elixirs</MudText>
+           <MudSpacer/>
+           <MudTextField @bind-Value="_searchString" Placeholder="Search" Adornment="Adornment.Start" 
+                         AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+       </ToolBarContent>
+       <HeaderContent>
+           <MudTh>Name</MudTh>
+           <MudTh>Effect</MudTh>
+           <MudTh>SideEffects</MudTh>
+           <MudTh>Characteristics</MudTh>
+           <MudTh>Time</MudTh>
+           <MudTh>Difficulty</MudTh>
+           <MudTh>Manufacturer</MudTh>
+       </HeaderContent>
+       <RowTemplate>
+           <MudTd DataLabel="Name">@context.Name</MudTd>
+           <MudTd DataLabel="Incantation">@context.Effect</MudTd>
+           <MudTd DataLabel="Effect">@context.SideEffects</MudTd>
+           <MudTd DataLabel="Type">@context.Characteristics</MudTd>
+           <MudTd DataLabel="Light">@context.Time</MudTd>
+           <MudTd DataLabel="Creator">@context.Difficulty.ToString()</MudTd>
+           <MudTd DataLabel="Can be verbal">@context.Manufacturer</MudTd>
+       </RowTemplate>
+       <PagerContent>
+           <MudTablePager/>
+       </PagerContent>
+   </MudTable> 
+</MudContainer>
+
+
+@code {
+    private string _searchString = "";
+    private Elixir _selectedItem = null;
+    
+    private IEnumerable<Elixir> _elixirs = new List<Elixir>();
+
+    protected override async Task OnInitializedAsync() {
+        // _elixirs = await _client.GetElixirsAsync();
+    }
+
+    private bool FilterFunc(Elixir elixir) => FilterFunc(elixir, _searchString);
+
+    private bool FilterFunc(Elixir elixir, string searchString) {
+        if (string.IsNullOrWhiteSpace(searchString))
+            return true;
+        if (elixir.Name.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (elixir.Effect.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (elixir.Difficulty.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (elixir.Time.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (elixir.Manufacturer.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        return false;
+    }
+}

@@ -1,13 +1,14 @@
 ﻿@using WizardWorldApp.Data
 @using WizardWorldApp.Data.Houses
-@inject HttpClient httpClient
+@using WizardWorldApp.Services
+@inject WizardWorldClient _client
 
-<MudTable Items="@_houses" Dense="@_dense" Hover="@_hover" Bordered="@_bordered" Striped="@_striped" 
-          Filter="new Func<House, bool>(FilterFunc1)" @bind-SelectedItem="_selectedItem1">
+<MudTable Items="@_houses" Dense="false" Hover="true" Bordered="false" Striped="true" 
+          Filter="new Func<House, bool>(FilterFunc)" @bind-SelectedItem="_selectedItem">
     <ToolBarContent>
         <MudText Typo="Typo.h6">Houses</MudText>
         <MudSpacer/>
-        <MudTextField @bind-Value="_searchString1" Placeholder="Search" Adornment="Adornment.Start" 
+        <MudTextField @bind-Value="_searchString" Placeholder="Search" Adornment="Adornment.Start" 
                       AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
     </ToolBarContent>
     <HeaderContent>
@@ -34,22 +35,14 @@
 </MudTable>
 
 @code {
-    private bool _dense = false;
-    private bool _hover = true;
-    private bool _striped = true;
-    private bool _bordered = false;
-    private string _searchString1 = "";
-    private string _searchString2 = "";
-    private House _selectedItem1 = null;
-    private House _selectedItem2 = null;
+    private string _searchString = "";
+    private House _selectedItem = null;
     private string _traits = "";
-
-    private HashSet<House> _selectedItems = new HashSet<House>();
 
     private IEnumerable<House> _houses = new List<House>();
 
     protected override async Task OnInitializedAsync() {
-    //Elements = await httpClient.GetFromJsonAsync<List<Element>>("webapi/periodictable");
+        // _houses = await _client.GetHousesAsync();
         _houses = new List<House>() {
             new House {
                 Id = Guid.NewGuid(),
@@ -105,8 +98,7 @@
         };
     }
 
-    private bool FilterFunc1(House spell) => FilterFunc(spell, _searchString1);
-    private bool FilterFunc2(House spell) => FilterFunc(spell, _searchString2);
+    private bool FilterFunc(House spell) => FilterFunc(spell, _searchString);
 
     private bool FilterFunc(House house, string searchString) {
         var traitsNames = house.Traits.Select(a => a.Name).ToList();

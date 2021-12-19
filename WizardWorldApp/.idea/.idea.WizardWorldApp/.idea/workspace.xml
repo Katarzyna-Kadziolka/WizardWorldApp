@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="32840158-f24a-4db2-8f79-9c0e43c39d91" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Components/ElixirsDataTable.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Components/IngredientsDataTable.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WizardWorldApp/Components/WizardsDataTable.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WizardWorldApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WizardWorldApp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WizardWorldApp/Components/HousesDataTable.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WizardWorldApp/Components/HousesDataTable.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WizardWorldApp/Components/MagicalCreaturesDataTable.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WizardWorldApp/Components/MagicalCreaturesDataTable.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WizardWorldApp/Components/SpellsDataTable.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WizardWorldApp/Components/SpellsDataTable.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WizardWorldApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WizardWorldApp/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WizardWorldApp/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WizardWorldApp/Pages/Index.razor" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +142,7 @@
       <workItem from="1638534076534" duration="7651000" />
       <workItem from="1638897125415" duration="2285000" />
       <workItem from="1638960064206" duration="10576000" />
-      <workItem from="1639923717569" duration="1677000" />
+      <workItem from="1639923717569" duration="3135000" />
     </task>
     <servers />
   </component>

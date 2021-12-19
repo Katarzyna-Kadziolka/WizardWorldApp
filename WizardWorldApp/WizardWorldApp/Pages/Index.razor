@@ -1,35 +1,45 @@
 ﻿@page "/"
 @using WizardWorldApp.Components
 
-<MudContainer MaxWidth="MaxWidth.False"
-              Style="@($"background:{Colors.Blue.Lighten4}; height:calc(100vh - var(--mud-appbar-height) + 50px)")">
-    <MudGrid>
-        <div class="localization">
-            <MudItem Class="pl-0 pt-7 pb-0">
-                <MudText Typo="Typo.h6" Class="ml-3">Select a category and browse the data!</MudText>
-            </MudItem>
-            <MudItem Class="pl-4">
-                <MudSelect T="string" Label="Category" AnchorOrigin="Origin.BottomCenter" 
-                           @bind-Value="@_inputValue" @bind-Value:event="ValueChanged">
-                    <MudSelectItem Value="@("Houses")"/>
-                    <MudSelectItem Value="@("Magical Creatures")"/>
-                    <MudSelectItem Value="@("Spells")"/>
-                </MudSelect>
-            </MudItem>
-            <MudItem Class="pa-4">
-                @if (_inputValue == "Spells") {
-                   <SpellsDataTable /> 
-                }
-                else if (_inputValue == "Houses") {
-                    <HousesDataTable />
-                }
-                else if (_inputValue == "Magical Creatures") {
-                    <MagicalCreaturesDataTable />
-                }
-            </MudItem>
-        </div>
-    </MudGrid>
-</MudContainer>
+<MudGrid Class="pl-5" Spacing="0" Style="@($"background:{Colors.Blue.Lighten4}; width:100%")">
+    <div class="localization">
+        <MudItem Class="pl-0 pt-7 pb-0">
+            <MudText Typo="Typo.h6" Class="ml-3">Select a category and browse the data!</MudText>
+        </MudItem>
+        <MudItem Class="pl-4">
+            <MudSelect T="string" Label="Category" AnchorOrigin="Origin.BottomCenter"
+                       @bind-Value="@_inputValue" @bind-Value:event="ValueChanged">
+                <MudSelectItem Value="@("Elixirs")"/>
+                <MudSelectItem Value="@("Houses")"/>
+                <MudSelectItem Value="@("Ingredients")"/>
+                <MudSelectItem Value="@("Magical Creatures")"/>
+                <MudSelectItem Value="@("Spells")"/>
+                <MudSelectItem Value="@("Wizards")"/>
+            </MudSelect>
+        </MudItem>
+        <MudItem Class="pa-4">
+            @if (_inputValue == "Spells") {
+                <SpellsDataTable/>
+            }
+            else if (_inputValue == "Houses") {
+                <HousesDataTable/>
+            }
+            else if (_inputValue == "Magical Creatures") {
+                <MagicalCreaturesDataTable/>
+            }
+            else if (_inputValue == "Elixirs") {
+                <ElixirsDataTable/>
+            }
+            else if (_inputValue == "Ingredients") {
+                <IngredientsDataTable/>
+            }
+            else if (_inputValue == "Wizards") {
+                <WizardsDataTable/>
+            }
+        </MudItem>
+    </div>
+</MudGrid>
+
 
 @code {
     private string _inputValue = "Spells";

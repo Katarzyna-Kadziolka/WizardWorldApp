@@ -3,44 +3,44 @@
 @using WizardWorldApp.Services
 @inject WizardWorldClient _client
 
-<MudContainer class="table_width">
-   <MudTable Items="@_spells" Dense="false" Hover="true" Bordered="false" Striped="true" 
-             Filter="new Func<Spell, bool>(FilterFunc)" @bind-SelectedItem="_selectedItem">
-       <ToolBarContent>
-           <MudText Typo="Typo.h6">Spells</MudText>
-           <MudSpacer/>
-           <MudTextField @bind-Value="_searchString" Placeholder="Search" Adornment="Adornment.Start" 
-                         AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
-       </ToolBarContent>
-       <HeaderContent>
-           <MudTh>Name</MudTh>
-           <MudTh>Incantation</MudTh>
-           <MudTh>Effect</MudTh>
-           <MudTh>Type</MudTh>
-           <MudTh>Light</MudTh>
-           <MudTh>Creator</MudTh>
-           <MudTh>Can be verbal</MudTh>
-       </HeaderContent>
-       <RowTemplate>
-           <MudTd DataLabel="Name">@context.Name</MudTd>
-           <MudTd DataLabel="Incantation">@context.Incantation</MudTd>
-           <MudTd DataLabel="Effect">@context.Effect</MudTd>
-           <MudTd DataLabel="Type">@context.Type.ToString()</MudTd>
-           <MudTd DataLabel="Light">@context.Light.ToString()</MudTd>
-           <MudTd DataLabel="Creator">@context.Creator</MudTd>
-           <MudTd DataLabel="Can be verbal">@context.CanBeVerbal</MudTd>
-       </RowTemplate>
-       <PagerContent>
-           <MudTablePager/>
-       </PagerContent>
-   </MudTable> 
-</MudContainer>
+
+<MudTable Items="@_spells" Dense="false" Hover="true" Bordered="false" Striped="true"
+          Filter="new Func<Spell, bool>(FilterFunc)" @bind-SelectedItem="_selectedItem">
+    <ToolBarContent>
+        <MudText Typo="Typo.h6">Spells</MudText>
+        <MudSpacer/>
+        <MudTextField @bind-Value="_searchString" Placeholder="Search" Adornment="Adornment.Start"
+                      AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0">
+        </MudTextField>
+    </ToolBarContent>
+    <HeaderContent>
+        <MudTh>Name</MudTh>
+        <MudTh>Incantation</MudTh>
+        <MudTh>Effect</MudTh>
+        <MudTh>Type</MudTh>
+        <MudTh>Light</MudTh>
+        <MudTh>Creator</MudTh>
+        <MudTh>Can be verbal</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="Name">@context.Name</MudTd>
+        <MudTd DataLabel="Incantation">@context.Incantation</MudTd>
+        <MudTd DataLabel="Effect">@context.Effect</MudTd>
+        <MudTd DataLabel="Type">@context.Type.ToString()</MudTd>
+        <MudTd DataLabel="Light">@context.Light.ToString()</MudTd>
+        <MudTd DataLabel="Creator">@context.Creator</MudTd>
+        <MudTd DataLabel="Can be verbal">@context.CanBeVerbal</MudTd>
+    </RowTemplate>
+    <PagerContent>
+        <MudTablePager/>
+    </PagerContent>
+</MudTable>
 
 
 @code {
     private string _searchString = "";
     private Spell _selectedItem = null;
-    
+
     private IEnumerable<Spell> _spells = new List<Spell>();
 
     protected override async Task OnInitializedAsync() {
@@ -60,4 +60,5 @@
             return true;
         return false;
     }
+
 }

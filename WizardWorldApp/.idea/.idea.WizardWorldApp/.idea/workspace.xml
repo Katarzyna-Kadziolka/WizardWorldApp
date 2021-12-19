@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="32840158-f24a-4db2-8f79-9c0e43c39d91" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WizardWorldApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WizardWorldApp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WizardWorldApp/Components/SpellsDataTable.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WizardWorldApp/Components/SpellsDataTable.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WizardWorldApp/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WizardWorldApp/Pages/Index.razor" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -142,7 +143,7 @@
       <workItem from="1638534076534" duration="7651000" />
       <workItem from="1638897125415" duration="2285000" />
       <workItem from="1638960064206" duration="10576000" />
-      <workItem from="1639923717569" duration="3135000" />
+      <workItem from="1639923717569" duration="5146000" />
     </task>
     <servers />
   </component>

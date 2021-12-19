@@ -1,12 +1,12 @@
 ﻿@page "/"
 @using WizardWorldApp.Components
 
-<MudGrid Class="pl-5" Spacing="0" Style="@($"background:{Colors.Blue.Lighten4}; width:100%")">
+<MudGrid Class="pl-5 pr-5" Spacing="0" Style="@($"background:{Colors.Blue.Lighten4}; width:100vw")">
     <div class="localization">
         <MudItem Class="pl-0 pt-7 pb-0">
             <MudText Typo="Typo.h6" Class="ml-3">Select a category and browse the data!</MudText>
         </MudItem>
-        <MudItem Class="pl-4">
+        <MudItem Class="pl-4 pr-4">
             <MudSelect T="string" Label="Category" AnchorOrigin="Origin.BottomCenter"
                        @bind-Value="@_inputValue" @bind-Value:event="ValueChanged">
                 <MudSelectItem Value="@("Elixirs")"/>

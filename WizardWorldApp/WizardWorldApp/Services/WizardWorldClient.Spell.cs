@@ -13,12 +13,12 @@ namespace WizardWorldApp.Services {
             if (firstName is not null) query.Add("Name", firstName);
             if (type is not null) query.Add("SpellType", type.ToString());
             if (incantation is not null) query.Add("Incantation", incantation);
-            var response = await _client.GetAsync("Spell", query);
+            var response = await _client.GetAsync("Spells", query);
             return await response.Content.DeserializeAsync<List<Spell>>();
         }
 
         public async Task<Spell> GetSpellByIdAsync(Guid id) {
-            var response = await _client.GetAsync($"spell/{id}");
+            var response = await _client.GetAsync($"Spells/{id}");
             if (response.StatusCode == HttpStatusCode.NotFound) {
                 return null;
             }

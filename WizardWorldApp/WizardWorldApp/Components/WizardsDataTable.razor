@@ -33,7 +33,7 @@
     private IEnumerable<Wizard> _wizards = new List<Wizard>();
 
     protected override async Task OnInitializedAsync() {
-        // _elixirs = await _client.GetWizardsAsync();
+        _wizards = await _client.GetWizardsAsync();
     }
 
     private bool FilterFunc(Wizard wizard) => FilterFunc(wizard, _searchString);

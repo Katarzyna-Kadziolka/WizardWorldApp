@@ -43,7 +43,7 @@
     private IEnumerable<Elixir> _elixirs = new List<Elixir>();
 
     protected override async Task OnInitializedAsync() {
-        // _elixirs = await _client.GetElixirsAsync();
+        _elixirs = await _client.GetElixirsAsync();
     }
 
     private bool FilterFunc(Elixir elixir) => FilterFunc(elixir, _searchString);

@@ -31,7 +31,7 @@
     private IEnumerable<Ingredient> _ingredients = new List<Ingredient>();
 
     protected override async Task OnInitializedAsync() {
-        // _elixirs = await _client.GetIngredientsAsync();
+        _ingredients = await _client.GetIngredientsAsync();
     }
 
     private bool FilterFunc(Ingredient ingredient) => FilterFunc(ingredient, _searchString);

@@ -41,9 +41,9 @@
     private bool FilterFunc(Wizard wizard, string searchString) {
         if (string.IsNullOrWhiteSpace(searchString))
             return true;
-        if (wizard.FirstName.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+        if (wizard.FirstName != null && wizard.FirstName.Contains(searchString, StringComparison.OrdinalIgnoreCase))
             return true;
-        if (wizard.LastName.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+        if (wizard.LastName != null && wizard.LastName.Contains(searchString, StringComparison.OrdinalIgnoreCase))
             return true;
         return false;
     }

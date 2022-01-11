@@ -53,13 +53,13 @@
             return true;
         if (elixir.Name.Contains(searchString, StringComparison.OrdinalIgnoreCase))
             return true;
-        if (elixir.Effect.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+        if (elixir.Effect != null && elixir.Effect.Contains(searchString, StringComparison.OrdinalIgnoreCase))
             return true;
         if (elixir.Difficulty.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
             return true;
-        if (elixir.Time.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+        if (elixir.Time != null && elixir.Time.Contains(searchString, StringComparison.OrdinalIgnoreCase))
             return true;
-        if (elixir.Manufacturer.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+        if (elixir.Manufacturer != null && elixir.Manufacturer.Contains(searchString, StringComparison.OrdinalIgnoreCase))
             return true;
         return false;
     }

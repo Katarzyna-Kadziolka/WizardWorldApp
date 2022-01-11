@@ -5,7 +5,7 @@
 
 
 <MudTable Items="@_spells" Dense="false" Hover="true" Bordered="false" Striped="true"
-          Filter="new Func<Spell, bool>(FilterFunc)" @bind-SelectedItem="_selectedItem">
+          Filter="new Func<Spell, bool>(FilterFunc)">
     <ToolBarContent>
         <MudText Typo="Typo.h6">Spells</MudText>
         <MudSpacer/>
@@ -39,26 +39,25 @@
 
 @code {
     private string _searchString = "";
-    private Spell _selectedItem = null;
-
     private IEnumerable<Spell> _spells = new List<Spell>();
 
     protected override async Task OnInitializedAsync() {
         _spells = await _client.GetSpellsAsync();
     }
 
-    private bool FilterFunc(Spell spell) => FilterFunc(spell, _searchString);
+    private bool FilterFunc(Spell spell) => Filter(spell, _searchString);
 
-    private bool FilterFunc(Spell spell, string searchString) {
+    private bool Filter(Spell spell, string searchString) {
         if (string.IsNullOrWhiteSpace(searchString))
             return true;
         if (spell.Name.Contains(searchString, StringComparison.OrdinalIgnoreCase))
             return true;
-        if (spell.Incantation.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+        if (spell.Incantation != null && spell.Incantation.Contains(searchString, StringComparison.OrdinalIgnoreCase))
             return true;
         if (spell.Type.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
             return true;
         return false;
     }
 
+    
 }

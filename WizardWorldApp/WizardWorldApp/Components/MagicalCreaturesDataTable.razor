@@ -87,9 +87,9 @@
             return true;
         if (creature.DangerLevel.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
             return true;
-        if (creature.Description.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+        if (creature.Description != null && creature.Description.Contains(searchString, StringComparison.OrdinalIgnoreCase))
             return true;
-        if (creature.NativeTo.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+        if (creature.NativeTo != null && creature.NativeTo.Contains(searchString, StringComparison.OrdinalIgnoreCase))
             return true;
         return false;
     }

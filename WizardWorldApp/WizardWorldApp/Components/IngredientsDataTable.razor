@@ -3,12 +3,12 @@
 @inject WizardWorldClient _client
 
 <MudContainer class="table_width">
-   <MudTable Items="@_ingredients" Dense="false" Hover="true" Bordered="false" Striped="true" 
+   <MudTable Items="@_ingredients" Dense="false" Hover="true" Bordered="false" Striped="true"
              Filter="new Func<Ingredient, bool>(FilterFunc)" @bind-SelectedItem="_selectedItem">
        <ToolBarContent>
            <MudText Typo="Typo.h6">Ingredients</MudText>
            <MudSpacer/>
-           <MudTextField @bind-Value="_searchString" Placeholder="Search" Adornment="Adornment.Start" 
+           <MudTextField @bind-Value="_searchString" Placeholder="Search" Adornment="Adornment.Start" Clearable="true"
                          AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
        </ToolBarContent>
        <HeaderContent>

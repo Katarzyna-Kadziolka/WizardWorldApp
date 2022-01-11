@@ -7,7 +7,8 @@
     <list default="true" id="32840158-f24a-4db2-8f79-9c0e43c39d91" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WizardWorldApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WizardWorldApp/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WizardWorldApp/Components/ElixirsDataTable.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WizardWorldApp/Components/ElixirsDataTable.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WizardWorldApp/Components/MagicalCreaturesDataTable.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WizardWorldApp/Components/MagicalCreaturesDataTable.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WizardWorldApp/Components/HousesDataTable.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WizardWorldApp/Components/HousesDataTable.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WizardWorldApp/Components/IngredientsDataTable.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WizardWorldApp/Components/IngredientsDataTable.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WizardWorldApp/Components/SpellsDataTable.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WizardWorldApp/Components/SpellsDataTable.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WizardWorldApp/Components/WizardsDataTable.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WizardWorldApp/Components/WizardsDataTable.razor" afterDir="false" />
     </list>
@@ -148,7 +149,7 @@
       <workItem from="1639923717569" duration="5146000" />
       <workItem from="1640089180648" duration="4717000" />
       <workItem from="1641219563783" duration="1254000" />
-      <workItem from="1641911434110" duration="4232000" />
+      <workItem from="1641911434110" duration="4867000" />
     </task>
     <servers />
   </component>

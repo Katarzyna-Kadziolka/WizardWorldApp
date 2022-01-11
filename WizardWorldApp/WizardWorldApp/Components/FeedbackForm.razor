@@ -16,8 +16,13 @@
                     <MudSelectItem Value="@(FeedbackType.General.ToString())"/>
                     <MudSelectItem Value="@(FeedbackType.Suggestion.ToString())"/>
                 </MudSelect>
-                <MudTextField @bind-Value="_feedback" Label="Your Message" Variant="Variant.Text" Lines="10" 
-                              AdornmentColor="Color.Info" ></MudTextField>
+                <MudTextField
+                    @bind-Value=_feedback
+                    Label="Your Message"
+                    Variant="Variant.Text"
+                    Lines="10"
+                    AdornmentColor="Color.Info">
+                </MudTextField>
             </MudForm>
         </MudCardContent>
         <MudCardActions>
@@ -29,14 +34,15 @@
     private string _feedbackType = FeedbackType.General.ToString();
     private string _feedback { get; set; }
 
-    private async void Send() {
+    private async Task Send() {
         Enum.TryParse(_feedbackType, out FeedbackType feedbackType);
         var command = new FeedbackCommand {
             FeedbackType = feedbackType,
             Feedback = _feedback,
             EntityId = null
         };
+        
         await _client.PostFeedbackAsync(command);
-        _feedback = "";
+        _feedback = String.Empty;
     }
 }

@@ -42,60 +42,7 @@
     private IEnumerable<House> _houses = new List<House>();
 
     protected override async Task OnInitializedAsync() {
-        // _houses = await _client.GetHousesAsync();
-        _houses = new List<House>() {
-            new House {
-                Id = Guid.NewGuid(),
-                Name = "Griffindor",
-                CommonRoom = "The tower",
-                HouseColours = "Red, gold",
-                Animal = "Lion",
-                Element = "Sword",
-                Founder = "Godryk Gryffindor",
-                Ghost = "Prawie Bezgłowy Nick",
-                Heads = new List<HouseHead>(),
-                Traits = new List<Trait> {
-                    new Trait {
-                        Id = Guid.NewGuid(),
-                        Name = TraitName.None
-                    }
-                }
-            },
-            new House {
-                Id = Guid.NewGuid(),
-                Name = "Ravenclaw",
-                CommonRoom = "The highest tower",
-                HouseColours = "Blue, silver",
-                Animal = "Raven",
-                Element = "Goblet",
-                Founder = "Rowena Ravenclaw",
-                Ghost = "Szara Dama",
-                Heads = new List<HouseHead>(),
-                Traits = new List<Trait> {
-                    new Trait {
-                        Id = Guid.NewGuid(),
-                        Name = TraitName.None
-                    }
-                }
-            },
-            new House {
-                Id = Guid.NewGuid(),
-                Name = "Slytherin",
-                CommonRoom = "The castle dungeons",
-                HouseColours = "Green, silver",
-                Animal = "Snake",
-                Element = "Dagger",
-                Founder = "Salazar Slytherin",
-                Ghost = "Krwawy Baron",
-                Heads = new List<HouseHead>(),
-                Traits = new List<Trait> {
-                    new Trait {
-                        Id = Guid.NewGuid(),
-                        Name = TraitName.None
-                    }
-                },
-            },
-        };
+        _houses = await _client.GetHousesAsync();
     }
 
     private bool FilterFunc(House spell) => FilterFunc(spell, _searchString);

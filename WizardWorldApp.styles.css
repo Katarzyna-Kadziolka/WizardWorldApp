@@ -1,0 +1,10 @@
+/* /Components/SpellsDataTable.razor.rz.scp.css */
+.table_width[b-xv36gdv723] {
+    width: 80vw;
+}
+/* /Pages/Index.razor.rz.scp.css */
+.localization[b-dy0i2065f1] {
+    display: grid;
+    grid-template-rows: 1fr 1fr 10fr; 
+}
+/* /Shared/MainLayout.razor.rz.scp.css */

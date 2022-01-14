@@ -4,9 +4,9 @@ Simple web application write in Blazor to browse data from [WizardWorldApi](http
 
 Go to []()
 
-![Browse data view]()
+![Browse data view](/WizardWorldApp/WizardWorldApp/Assets/browse-data.png)
 
-![Send feedback view]()
+![Send feedback view](/WizardWorldApp/WizardWorldApp/Assets/feeedback.png)
 
 ## Features
 - selection of data categories

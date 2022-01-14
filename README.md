@@ -2,7 +2,7 @@
 
 Simple web application write in Blazor to browse data from [WizardWorldApi](https://github.com/MossPiglets/WizardWorldAPI)
 
-Go to []()
+Go to [https://katarzyna-kadziolka.github.io/WizardWorldApp/](https://katarzyna-kadziolka.github.io/WizardWorldApp/)
 
 ![Browse data view](/WizardWorldApp/WizardWorldApp/Assets/browse-data.png)
 
